@@ -21,8 +21,9 @@ Before you begin, ensure that the following are installed:
 Clone this repository to your local machine:
 
 ```bash
-git clone https://github.com/yourusername/cloud-engineer-coding-challenge.git
-cd cloud-engineer-coding-challenge
+git clone https://github.com/lordsesay/codechallenge3.git
+cd codechallenge3  
+
 ### 2. Set Up AWS Credentials
 Before running the Terraform or Ansible commands, you need to set up your AWS credentials. You can do this by configuring the AWS CLI:
 
