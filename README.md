@@ -20,15 +20,12 @@ Before you begin, ensure that the following are installed:
 
 Clone this repository to your local machine:
 
-```bash
 git clone https://github.com/lordsesay/codechallenge3.git
 cd codechallenge3  
 
 ### 2. Set Up AWS Credentials
 Before running the Terraform or Ansible commands, you need to set up your AWS credentials. You can do this by configuring the AWS CLI:
 
-bash
-Copy code
 aws configure
 Provide your AWS Access Key, Secret Key, default region, and output format.
 
@@ -41,21 +38,15 @@ An S3 bucket
 IAM roles and security groups
 To get started with Terraform, initialize your project:
 
-bash
-Copy code
 terraform init
 This command will install the necessary Terraform provider plugins.
 
 b) Plan and Apply Terraform Configuration
 To review the infrastructure that Terraform will create, run the following:
 
-bash
-Copy code
 terraform plan
 If everything looks good, apply the configuration to create the infrastructure:
 
-bash
-Copy code
 terraform apply
 Terraform will prompt you for confirmation before proceeding. Type yes to proceed with the creation.
 
@@ -72,8 +63,6 @@ Ensure that the hosts file is updated to point to the newly created EC2 instance
 In your Ansible inventory, include the public IP or DNS of the EC2 instance.
 Run the Ansible playbook to configure the server:
 
-bash
-Copy code
 ansible-playbook -i hosts setup_web_server.yml
 This will install the web server and deploy the "Hello, World!" page.
 
@@ -82,7 +71,6 @@ setup_web_server.yml: This playbook installs Nginx, copies a simple HTML file to
 Example playbook content:
 
 yaml
-Copy code
 ---
 - name: Configure EC2 instance with Nginx
   hosts: web
@@ -110,14 +98,10 @@ Once the playbook runs successfully, you can access the web page by navigating t
 
 Example URL:
 
-vbnet
-Copy code
 http://<public-ip-of-ec2-instance>
 6. Cleanup
 To destroy the resources created by Terraform, run the following command:
 
-bash
-Copy code
 terraform destroy
 This will remove the EC2 instance, S3 bucket, and other infrastructure components.
 
